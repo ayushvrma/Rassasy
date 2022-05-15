@@ -64,6 +64,9 @@ class _SignInPageState extends State<SignInPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          SizedBox(
+                            height: 100,
+                          ),
                           Text(
                             "Welcome back.",
                             style: kHeadline,
@@ -76,19 +79,30 @@ class _SignInPageState extends State<SignInPage> {
                             style: kBodyText2,
                           ),
                           SizedBox(
-                            height: 60,
+                            height: 100,
                           ),
-                          MyTextField(
-                            hintText: 'Phone, email or username',
-                            inputType: TextInputType.text,
+                          TextField(
+                            decoration: const InputDecoration(
+                              focusColor: Colors.black,
+                              hoverColor: Colors.black,
+                              border: OutlineInputBorder(
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(20.0)),
+                              ),
+                              hintText: 'Phone, email or username',
+                            ),
                           ),
-                          MyPasswordField(
-                            isPasswordVisible: isPasswordVisible,
-                            onTap: () {
-                              setState(() {
-                                isPasswordVisible = !isPasswordVisible;
-                              });
-                            },
+                          TextField(
+                            obscureText: true,
+                            decoration: const InputDecoration(
+                              focusColor: Colors.black,
+                              hoverColor: Colors.black,
+                              border: OutlineInputBorder(
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(20.0)),
+                              ),
+                              hintText: 'Password',
+                            ),
                           ),
                         ],
                       ),

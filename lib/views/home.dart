@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:recipe_app/models/recipe_model.dart';
 import 'package:recipe_app/views/recipe_view.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:recipe_app/views/shopping_list.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -29,18 +30,33 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Rassasy'),
+        backgroundColor: Colors.black,
         centerTitle: true,
+        actions: [
+          TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ShoppingList()),
+                );
+              },
+              child: Icon(
+                Icons.shopping_cart,
+                color: Colors.white,
+              ))
+        ],
       ),
       body: Stack(
         children: <Widget>[
           Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [const Color(0xff213A50), const Color(0xff071930)],
-                    begin: FractionalOffset.topRight,
-                    end: FractionalOffset.bottomLeft)),
+            color: Colors.white,
+            // decoration: BoxDecoration(
+            //     gradient: LinearGradient(
+            //         colors: [const Color(0xff213A50), const Color(0xff071930)],
+            //         begin: FractionalOffset.topRight,
+            //         end: FractionalOffset.bottomLeft)),
           ),
           SingleChildScrollView(
             child: Container(
@@ -66,7 +82,7 @@ class _HomeState extends State<Home> {
                     "What will you cook today?",
                     style: TextStyle(
                         fontSize: 20,
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Overpass'),
                   ),
@@ -74,7 +90,7 @@ class _HomeState extends State<Home> {
                     "Just Enter Ingredients you have and we will show the best recipe for you",
                     style: TextStyle(
                         fontSize: 15,
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.w300,
                         fontFamily: 'OverpassRegular'),
                   ),
@@ -89,19 +105,19 @@ class _HomeState extends State<Home> {
                             controller: textEditingController,
                             style: TextStyle(
                                 fontSize: 16,
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontFamily: 'Overpass'),
                             decoration: InputDecoration(
                               hintText: "Enter Ingridients",
                               hintStyle: TextStyle(
                                   fontSize: 16,
-                                  color: Colors.white.withOpacity(0.5),
+                                  color: Colors.black.withOpacity(0.5),
                                   fontFamily: 'Overpass'),
                               enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white),
+                                borderSide: BorderSide(color: Colors.black),
                               ),
                               focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white),
+                                borderSide: BorderSide(color: Colors.black),
                               ),
                             ),
                           ),
@@ -140,24 +156,13 @@ class _HomeState extends State<Home> {
                                 print("not doing it");
                               }
                             },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  gradient: LinearGradient(
-                                      colors: [
-                                        const Color(0xffA2834D),
-                                        const Color(0xffBC9A5F)
-                                      ],
-                                      begin: FractionalOffset.topRight,
-                                      end: FractionalOffset.bottomLeft)),
-                              padding: EdgeInsets.all(8),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Icon(Icons.search,
-                                      size: 18, color: Colors.white),
-                                ],
-                              ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Icon(Icons.search,
+                                    size: 25, color: Colors.black),
+                                Padding(padding: EdgeInsets.only(right: 18))
+                              ],
                             )),
                       ],
                     ),
