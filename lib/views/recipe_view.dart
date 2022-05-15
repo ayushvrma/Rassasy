@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'shopping_list.dart';
 
 class RecipeView extends StatefulWidget {
   final String postUrl;
@@ -35,7 +36,21 @@ class _RecipeViewState extends State<RecipeView> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Rassasy'),
+          backgroundColor: Colors.black,
           centerTitle: true,
+          actions: [
+            TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ShoppingList()),
+                  );
+                },
+                child: Icon(
+                  Icons.shopping_cart,
+                  color: Colors.white,
+                ))
+          ],
         ),
         body: Container(
           child: Column(

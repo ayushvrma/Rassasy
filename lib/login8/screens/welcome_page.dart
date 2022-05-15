@@ -35,12 +35,14 @@ class WelcomePage8 extends StatelessWidget {
               Flexible(
                 child: Column(
                   children: [
+                    SizedBox(
+                      height: 10,
+                    ),
                     Center(
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: Image(
-                          image:
-                              AssetImage('assets/images/team_illustration.png'),
+                          image: AssetImage('assets/images/recipe_book.jpg'),
                         ),
                       ),
                     ),
@@ -48,7 +50,7 @@ class WelcomePage8 extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      "Enterprise team\ncollaboration.",
+                      "Rassassy",
                       style: kHeadline,
                       textAlign: TextAlign.center,
                     ),
@@ -58,7 +60,7 @@ class WelcomePage8 extends StatelessWidget {
                     Container(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: Text(
-                        "Rassasy: Recipes based on your ingredients",
+                        "Recipes based on your ingredients",
                         style: kBodyText,
                         textAlign: TextAlign.center,
                       ),
